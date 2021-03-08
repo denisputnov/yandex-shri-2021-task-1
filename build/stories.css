@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, button {
+  font-family: inherit;
+}
+
+body.leaders {
+  height: 100vh;
+  width: 100vw;
+}
+body.leaders header h1 {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: calc(3vw + 20px);
+}
+body.leaders header p {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 8px;
+  font-size: calc(1.2vw + 14px);
+}
+body.leaders main {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  min-height: 50vh;
+}
+body.leaders main section[data-pos='1'] {
+  position: absolute;
+  bottom: 0;
+  left: 50vw;
+  width: 18vw;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+body.leaders main section[data-pos='1'] div.person {
+  position: absolute;
+  left: 0;
+  bottom: 35vh;
+}
+body.leaders main section[data-pos="1"] div.stand {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 32vh;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+body.leaders main section[data-pos="1"] div.stand p {
+  position: relative;
+  margin-top: 4vh;
+  text-align: center;
+  font-weight: bold;
+  font-size: calc(3vw + 24px);
+}
+body.leaders main section:not([data-pos='1']) {
+  position: absolute;
+  bottom: 0;
+  width: 18vw;
+}
+body.leaders main section:not([data-pos="1"]) div.stand {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+body.leaders main section:not([data-pos="1"]) div.stand p {
+  position: relative;
+  margin-top: 4vh;
+  text-align: center;
+  font-weight: bold;
+  font-size: calc(3vw + 18px);
+}
+body.leaders main section[data-pos='2'],
+body.leaders main section[data-pos='3'] {
+  height: 65vh;
+}
+body.leaders main section:not([data-pos='1']) div.person {
+  width: 85%;
+}
+body.leaders main section[data-pos='2'] div.person,
+body.leaders main section[data-pos='3'] div.person {
+  bottom: 30vh;
+}
+body.leaders main section[data-pos='4'] div.person,
+body.leaders main section[data-pos='5'] div.person {
+  bottom: 25vh;
+}
+body.leaders main section[data-pos='2'] div.person,
+body.leaders main section[data-pos='5'] div.person {
+  position: absolute;
+  left: 0;
+}
+body.leaders main section[data-pos='3'] div.person,
+body.leaders main section[data-pos='4'] div.person {
+  position: absolute;
+  right: 0;
+}
+body.leaders main section[data-pos='4'],
+body.leaders main section[data-pos='5'] {
+  height: 40vw;
+}
+body.leaders main section[data-pos='2'] div.stand,
+body.leaders main section[data-pos='3'] div.stand {
+  height: 27vh;
+}
+body.leaders main section[data-pos='4'] div.stand,
+body.leaders main section[data-pos='5'] div.stand {
+  height: 22vh;
+}
+body.leaders main section[data-pos='2'] {
+  left: calc(50vw - 18vw);
+  transform: translateX(-35%);
+  z-index: 4;
+}
+body.leaders main section[data-pos='3'] {
+  left: 50vw;
+  transform: translateX(35%);
+  z-index: 3;
+}
+body.leaders main section[data-pos='4'] {
+  left: calc(50vw + 18vw);
+  transform: translateX(20%);
+  z-index: 2;
+}
+body.leaders main section[data-pos='5'] {
+  left: calc(50vw - 18vw*2);
+  transform: translateX(-20%);
+  z-index: 2;
+}
+body.leaders main section[data-pos='2'] div.stand p,
+body.leaders main section[data-pos='5'] div.stand p {
+  transform: translateX(-7.5%);
+}
+body.leaders main section[data-pos='3'] div.stand p,
+body.leaders main section[data-pos='4'] div.stand p {
+  transform: translateX(7.5%);
+}
+body.leaders main section div.person img.avatar {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 52%;
+  border-radius: 50%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  z-index: -1;
+}
+body.leaders main section div.person p.emoji {
+  position: absolute;
+  font-size: calc(3vw + 10px);
+  top: calc(-2.5vw);
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body.leaders main section div.person p.name {
+  margin-top: 2vh;
+  font-size: calc(1.4vw + 10px);
+  text-align: center;
+  word-spacing: 200px;
+  white-space: pre-line;
+}
+body.leaders main section div.person p.score {
+  margin-top: 1.8vh;
+  font-size: calc(1.2vw + 10px);
+  text-align: center;
+}
+
+@media (orientation: portrait) {
+  body.leaders header h1 {
+    text-align: left;
+    padding: 5.5vw 6vw 0
+  }
+  body.leaders header p {
+    text-align: left;
+    padding: 8px 0 0 6vw;
+  }
+  body.leaders main section[data-pos="4"],
+  body.leaders main section[data-pos="5"] {
+    display: none;
+  }
+  body.leaders main section[data-pos='1'] {
+    width: 32vw;
+  }
+  body.leaders main section:not([data-pos='1']) {
+    width: 32vw;
+  }
+  body.leaders main section[data-pos='2'] {
+    left: 50vw;
+    transform: translateX(35%);
+    z-index: 3;
+  }
+  body.leaders main section[data-pos='3'] {
+    left: calc(50vw - 32vw);
+    transform: translateX(-35%);
+  }
+  body.leaders main section[data-pos='2'] div.stand p {
+    transform: translateX(7.5%);
+  }
+  body.leaders main section[data-pos='3'] div.stand p {
+    transform: translateX(-7.5%);
+  }
+  body.leaders main section[data-pos='2'] div.person {
+    right: 0;
+    left: unset;
+  }
+  body.leaders main section[data-pos='3'] div.person {
+    left: 0;
+  }
+  body.leaders main section[data-pos='1'] div.stand {
+    height: 50vh;
+  }
+  body.leaders main section[data-pos='1'] div.person {
+    bottom: 54vh
+  }
+  body.leaders main section[data-pos='2'] div.stand {
+    height: 40vh;
+  }
+  body.leaders main section[data-pos='2'] div.person {
+    bottom: 44vh
+  }
+  body.leaders main section[data-pos='3'] div.stand {
+    height: 30vh;
+  }
+  body.leaders main section[data-pos='3'] div.person {
+    bottom: 34vh
+  }
+}
+
+/* ! LEADERS DARK THEME */
+body.theme_dark.leaders header h1 { 
+  color: #FCFBF7;
+}
+body.theme_dark.leaders header p { 
+  color: #918F8A;
+}
+body.theme_dark.leaders {
+  background: radial-gradient(70.24% 70.24% at 49.87% 29.76%, rgba(19, 14, 0, 0.9) 0%, #000000 100%);
+}
+body.theme_dark.leaders main section[data-pos='1'] div.stand {
+  background: radial-gradient(91.67% 122.17% at 69.17% -11.17%, #FFA300 0%, #2D1C00 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 6px 15px rgba(255, 162, 0, 0.4);
+}
+body.theme_dark.leaders main section[data-pos='1'] div.stand p {
+  color: #FCFBF7;
+}
+body.theme_dark.leaders main section:not([data-pos='1']) div.stand {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) -2.22%, rgba(0, 0, 0, 0.8) 100%), radial-gradient(149.08% 95.38% at 38.75% 71.48%, #000000 0%, #231900 0.01%, #4D4D4D 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(103, 103, 103, 0.6);
+}
+body.theme_dark.leaders main section:not([data-pos='1']) div.stand p {
+  color: #FCFBF7;
+}
+body.theme_dark.leaders main section div.person p.name {
+  color: #FCFBF7;
+}
+body.theme_dark.leaders main section div.person p.score {
+  color: #BFBFBF;
+}
+
+/* ! LEADERS WHITE  */
+body.theme_white.leaders header h1 { 
+  color: #261C00;
+}
+body.theme_white.leaders header p { 
+  color: #BFBFBF;
+}
+body.theme_white.leaders {
+  background: #fff;
+}
+body.theme_white.leaders main section[data-pos='1'] div.stand {
+  background: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
+}
+body.theme_white.leaders main section[data-pos='1'] div.stand p {
+  color: #261C00;
+}
+body.theme_white.leaders main section:not([data-pos='1']) div.stand {
+  background: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #E9E9E9 100%, rgba(234, 234, 234, 0) 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+}
+body.theme_white.leaders main section:not([data-pos='1']) div.stand p {
+  color: #261C00;
+}
+body.theme_white.leaders main section div.person p.name {
+  color: #261C00;
+}
+body.theme_white.leaders main section div.person p.score {
+  color: #BFBFBF;
+}

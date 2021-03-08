@@ -1,0 +1,30 @@
+{
+  "name": "yandex-shri-2021-task-1",
+  "version": "1.0.0",
+  "description": "В этом репозитории находятся материалы тестового задания «Шаблоны Stories» для [17-й Школы разработки интерфейсов](https://yandex.ru/promo/academy/shri) (лето-2021, Москва).",
+  "main": "./src/server/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grnbows/yandex-shri-2021-task-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grnbows/yandex-shri-2021-task-1/issues"
+  },
+  "homepage": "https://github.com/grnbows/yandex-shri-2021-task-1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "nodemon": "^2.0.7"
+  }
+}
