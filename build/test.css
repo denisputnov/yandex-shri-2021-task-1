@@ -1,0 +1,125 @@
+
+.donut-chart-block {
+  overflow: hidden;
+}
+
+.donut-chart {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 2rem auto;
+  border-radius: 100%
+}
+
+.donut-chart .center {
+  background: transparent;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 140px;
+  width: 140px;
+  border-radius: 70px;
+}
+
+.clip {
+  border-radius: 50%;
+  clip: rect(0, 400px, 400px, 200px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.item {
+  clip: rect(0, 200px, 400px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+  border-radius: 100%;
+}
+
+#section1 {
+  transform: rotate(0deg);
+}
+
+#section1 .item {
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(99, 63, 0, 0.5) 72.92%, rgba(15, 9, 0, 0.5) 100%);
+/* Styles/White/Circle/Second */
+
+box-shadow: 0px 0px 20px -8px rgba(147, 93, 0, 0.2), inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(202, 129, 0, 0.9);
+border-radius: 6px;
+  transform: rotate(76deg);
+}
+
+#section2 {
+  transform: rotate(76deg);
+}
+
+#section2 .item {
+  background-color: #11A8AB;
+  transform: rotate(140deg);
+}
+
+#section3 {
+  transform: rotate(215deg);
+}
+
+#section3 .item {
+  background-color: #4FC4F6;
+  transform: rotate(113deg);
+}
+
+#section4 {
+  transform: rotate(-32deg);
+}
+
+#section4 .item {
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(255, 163, 0, 0.8) 71.88%, rgba(91, 58, 0, 0.8) 100%);
+  /* Styles/White/Circle/First */
+  
+  box-shadow: 0px 0px 20px -8px rgba(248, 158, 0, 0.2), inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 162, 0, 0.9);
+  border-radius: 6px;
+  transform: rotate(32deg);
+}
+
+/* .diagram_container {
+  /* clip-path: circle(100px at center); */
+  /* background: radial-gradient(circle at center, transparent 25%, red 25.5%); */
+  /* overflow: hidden; */
+  /* background-size: 100% 100%; */
+  /* background-position: 50% 50%; */
+  /* -webkit-mask:radial-gradient(circle 150px,transparent 99%,#fff 100%);
+          mask:radial-gradient(circle 150px,transparent 99%,#fff 100%);
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+} 
+/* .test2 {
+  position: absolute;
+  height: 40vmin;
+  width: 40vmin;
+  border-radius: 50%;
+  overflow: hidden; */
+/* } */
+/* .test {
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  left: 24px;
+  top: 24px;
+
+  background: radial-gradient(49.84% 49.84% at 49.84% 50.16%, rgba(255, 163, 0, 0.8) 71.88%, rgba(91, 58, 0, 0.8) 100%);
+  /* Styles/White/Circle/First */
+
+  /* box-shadow: 0px 0px 20px -8px rgba(248, 158, 0, 0.2), inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 162, 0, 0.9);
+  border-radius: 50%;
+  -webkit-mask:radial-gradient(circle 11vw,transparent 99%,#fff 100%);
+          mask:radial-gradient(circle 11vw,transparent 99%,#fff 100%);
+  clip-path: polygon(25% 0, 100% 0%, 100% 0%, 50% 50%);
+}
+ */ 
