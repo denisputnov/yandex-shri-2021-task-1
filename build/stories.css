@@ -365,7 +365,7 @@ body.chart .user .user-info {
 body.chart .user-info .username {
   text-align: left;
   font-size: calc(1.4vw + 10px);
-  line-height: 2vh;
+  line-height: 2.4vh;
 }
 
 body.chart .user-info .score {
@@ -373,6 +373,7 @@ body.chart .user-info .score {
   font-size: calc(1.1vw + 10px);
   line-height: 2vh;
   font-weight: normal;
+  margin-top: 1vh;
 }
 
 body.chart .chart-content {
@@ -380,9 +381,7 @@ body.chart .chart-content {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  
   white-space: nowrap;
-  /* padding: 0 2.5vw */
 }
 
 body.chart .chart-content section {
@@ -391,11 +390,16 @@ body.chart .chart-content section {
   margin: 0 2.5vw;
   flex-direction: column;
   text-align: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
-body.chart .chart-content section:nth-last-child(1) {
-  min-width: calc(4vw + 40px + 2.5vw);
-  padding-right: 2.5vw;
+body.chart .chart-content section:last-child {
+  min-width: calc(4vw + 40px + 4vw);
+  padding-right: 4vw;
+}
+
+body.chart .chart-content section:first-child {
+  min-width: calc(4vw + 40px + 1.5vw);
+  padding-left: 1.5vw;
 }
 
 body.chart .chart-content section .pillar {
@@ -421,6 +425,14 @@ body.theme_dark.chart .chart-content section .pillar {
 body.theme_dark.chart .chart-content section.active .pillar {
   background: radial-gradient(81.14% 100% at 50% 0%, #FFA300 0%, #2D1C00 100%);
   box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 6px 15px rgba(255, 162, 0, 0.5);
+}
+body.theme_white.chart .chart-content section .pillar {
+  background: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #E9E9E9 100%, rgba(234, 234, 234, 0) 100%);
+box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
+}
+body.theme_white.chart .chart-content section.active .pillar {
+  background: linear-gradient(180deg, #FFF2D1 0.82%, #FFD66C 100%);
+  box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8);
 }
 
 body.theme_dark.chart .chart-content section.active .value {
@@ -482,6 +494,14 @@ body.theme_white.chart .user:nth-child(1) {
     text-align: left;
     font-size: calc(1.1vh + 10px);
   }
+
+  body.chart .chart-content section .value {
+    font-size: calc(1.6vh + 16px);
+  }
+  
+  body.chart .chart-content section .title {
+    font-size: calc(1.4vh + 10px);
+  }
   
   body.theme_dark.chart .user:nth-child(1) {
     border-right: none;
@@ -492,4 +512,48 @@ body.theme_white.chart .user:nth-child(1) {
     border-right: none;
     border-bottom: solid 0.3vh #BFBFBF30;
   }
+}
+
+@media(orientation: landscape) {
+  body.chart .chart-content section:nth-child(-n+5) {
+    display: none;
+  }
+
+  body.chart .chart-content {
+    justify-content: space-between;
+    overflow-x: unset;
+    padding: 0 8vw;
+  }
+  body.chart .chart-content section {
+    margin: 0;
+    padding: 0;
+  }
+  body.chart .chart-content section:last-child {
+    padding-right: 0;
+    min-width: calc(4vw + 40px);
+  }
+}
+
+/* ! ACTIVITY */
+
+body.activity .heatmap {
+  background-color: red;
+  height: 50vh;
+  width: 100%;
+  margin-top: 10vh;
+}
+body.activity .slider {
+  /* position: absolute;
+  left: 0;
+  bottom: 0; */
+  background-color: green;
+  height: 20vh;
+  width: 100%;
+}
+body.activity main {
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* height: 70vh; */
 }

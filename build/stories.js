@@ -269,12 +269,11 @@ class Page {
   }
 
   renderLeaders() {
-    let html;
-    html = `<header>
-              <h1>${this.data.title}</h1>
-              <p>${this.data.subtitle}</p>
-            </header>
-          <main>`
+    let html = `<header>
+                  <h1>${this.data.title}</h1>
+                  <p>${this.data.subtitle}</p>
+                </header>
+                <main>`
     for (let i = 0; i < 5; i++) {
       html += `<section data-pos='${i + 1}'>
                 <div class="person">
@@ -298,14 +297,63 @@ class Page {
 
   __renderChart() {
 
-    console.log('chart rendered');
-    const chartContent = document.querySelector('.chart-content');
-    const scroll = () => chartContent.scrollBy({
-      top: 0,
-      left: chartContent.offsetWidth
-    });
-    window.addEventListener('resize', scroll);
-    scroll();
+    let { values, users } = this.data;
+
+    values.splice(values.length - 3 , 3)
+    // console.log(values);
+
+    const maxValue = Math.max.apply(Math, values.map(function(value) { return value.value }));
+    const minValue = Math.min.apply(Math, values.map(function(value) { return value.value }));
+
+    const _getPillarHeight = (value) => {
+      return value === 0 ? '5%' : `calc(${((100 * value) / maxValue).toFixed(1)}% - 10vh)`; 
+    }
+
+    const renderHeader = () => `<header>
+                                  <h1>Коммиты</h1>
+                                  <p>Спринт № 213</p>
+                                </header>`
+ 
+    const renderChart = () => {
+      let html = '';
+      values.forEach(value => {
+        html += `<section ${value.active ? 'class="active"' : ''}>
+                   <p class="value">${value.value == 0 ? '' : value.value}</p>
+                   <div class="pillar" style="max-height: ${_getPillarHeight(value.value)};"></div>
+                   <p class="title">${value.title}</p>
+                 </section>`
+      });
+      return `<div class="chart-content">${html}</div>`
+    }
+
+    const renderUsers = () => {
+      let html = '';
+      for (let i = 0; i < 2; i++) {
+        html += `<div class="user">
+                  <img src="./images/4x/${users[i].avatar}" alt="" class="user-avatar">
+                  <div class="user-info">
+                    <p class="username">${users[i].name}</p>
+                    <p class="score">${users[i].valueText}</p>
+                  </div>
+                </div>`
+      }
+      return `<div class="users">${html}</div>`
+    }
+    
+    const _scrollChart = () => {
+      const chartContent = document.querySelector('.chart-content');
+      const scroll = () => chartContent.scrollBy({
+        top: 0,
+        left: chartContent.offsetWidth
+        // right: 0,
+      });
+      window.addEventListener('resize', scroll);
+      scroll();
+      console.log('chart rendered');
+    }
+
+    setTimeout(_scrollChart, 500);
+    return `${renderHeader()}<main>${renderChart() + renderUsers()}</main>`
   }
 
   __renderDiagram() {
@@ -327,18 +375,3 @@ renderTemplate(data[SLIDE].alias, data[SLIDE].data)
 
 const body = document.querySelector('body');
 // body.innerHTML = renderTemplate(data[SLIDE].alias, data[SLIDE].data);
-
-
-var radius = parseInt($("#radius").attr("r")) // Get the radius of the circle 
-var perimeter = 2 * 3.14 * radius;
-
-$(".progress").each(function(){
-  var amount = parseFloat($(this).attr("data-fill"));
-  var fillAmount = perimeter - perimeter * amount / 100;
-  
-  $(this).attr({
-    "stroke-dasharray":perimeter,
-    "stroke-dashoffset":fillAmount
-  })
-  
-})
